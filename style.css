@@ -1,4 +1,67 @@
-canvas {
-    background-color: lightsteelblue;
-    border: solid 9px darkslategrey;
+:root {
+    --boxShadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: darkslategrey;
+    background-image: url('carlos-felipe-ramirez-mesa-g3CsD5K-KZE-unsplash.jpg');
+    height: 100vh;
+    width: 100vw;
+    font-family: system-ui, tahoma;
+}
+
+#container {
+  /*  border: solid 9px darkslategrey;*/
+    box-shadow: var(--boxShadow);
+    height: 700px;
+    width: 1100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  /*  background-image: url('carlos-felipe-ramirez-mesa-g3CsD5K-KZE-unsplash.jpg');*/
+}
+
+#header {
+    height: auto;
+    width: auto;
+    padding: 10px;
+    border-radius: 15px;
+    text-shadow:  1px 1px 2px indianred, 0 0 1em maroon, 0 0 0.2em lavender;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#input {
+    box-shadow: var(--boxShadow);
+    border-radius: 10px;
+    padding: 5px; 
+    font-size: 33px;
+    background-color: lightgrey;
+    text-align: center;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode';
+    color: darkslategrey;
+}
+
+.button {
+    background-color: grey;
+    border-radius: 15px;
+    padding: 5px;
+    font-size: 33px;
+    height: auto;
+    width: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-shadow:  2px 2px darkslategrey, 2px 0 3px white;
+    box-shadow: var(--boxShadow);
+}
+.button:hover{
+    background-color: #766666;
+}
+

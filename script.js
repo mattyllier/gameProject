@@ -1,26 +1,7 @@
-const canvas = document.querySelector('canvas')
-const ctx = canvas.getContext('2d')
-const image = document.getElementById('image')
-let level = []
+const container = document.getElementById('container')
+const header = document.getElementById('header')
 
-const tile = {
-    x : 50,
-    y : 100,
-    h : 40,
-    w : 40,
-    color : 'lemonchiffon',
-    speed : 10,
-    text : 'S'
-}
 
-const orb = {
-    x : Math.random()*canvas.width-20,
-    y : Math.random()*canvas.height-20,
-    radius : 7,
-    dx : 2,
-    dy: -2
-    //color : `#${Math.floor(Math.random()*16777215).toString(16)}`
-}
 
 const drawBall = (obj)=>{
     ctx.beginPath
@@ -45,8 +26,8 @@ const clear = ()=>{
 }
 
 window.addEventListener('keydown',e=>{
-    if(tile.x < tile.w||tile.x > canvas.width-tile.w) tile.x = tile.speed
-    if(tile.y < tile.h||tile.y > canvas.height-tile.h) tile.y = tile.speed
+   // if(tile.x < tile.w||tile.x > canvas.width-tile.w) tile.x = tile.speed
+  //  if(tile.y < tile.h||tile.y > canvas.height-tile.h) tile.y = tile.speed
     if(e.key==='ArrowLeft') tile.x-=tile.speed
     if(e.key==='ArrowRight') tile.x+=tile.speed
     if(e.key==='ArrowDown') tile.y+=tile.speed

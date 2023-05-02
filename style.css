@@ -69,13 +69,6 @@ body {
 #gameButton {
     padding: 20px;
     border: solid darkslategrey 10px;
+    color: black !important;
+    text-decoration: none;
 }
-
-/* gameboard HTML */
-
-
-
-#canvas {
-    background-color: darkslateblue;
-}
-

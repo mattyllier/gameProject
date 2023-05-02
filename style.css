@@ -37,7 +37,7 @@ body {
     justify-content: center;
 }
 
-#input {
+.input {
     box-shadow: var(--boxShadow);
     border-radius: 10px;
     padding: 5px; 
@@ -71,4 +71,32 @@ body {
     border: solid darkslategrey 10px;
     color: black !important;
     text-decoration: none;
+}
+
+
+/* gameBoard */
+
+#boardContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#horizBar {
+    display: flex;
+    align-items: center;
+}
+
+#gameBoard {
+    box-shadow: var(--boxShadow);
+    height: 150px;
+    width: 700px;
+}
+
+.round {
+    display: flex;
+    justify-content: center;
+    text-shadow: 1px 1px 2px indianred, 0 0 1em maroon, 0 0 0.2em lavender;
+    font-size: 46px;
 }

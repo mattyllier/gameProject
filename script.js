@@ -1,6 +1,6 @@
 const container = document.getElementById('container')
 //const header = document.getElementById('header')
-const input = document.getElementById('input')
+const input = document.getElementById('mainInput')
 const encry = document.getElementById('encrypt')
 const decry = document.getElementById('decrypt')
 

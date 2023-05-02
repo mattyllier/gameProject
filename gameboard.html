@@ -5,15 +5,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src='scriptGameboard.js' defer></script>
-    <link rel='stylesheet' href='styleGameboard.css'></link>
+    <link rel='stylesheet' href='style.css'></link>
     <title>SecretPasswordGameboard</title>
 </head>
 <body>
     <div id='header'>
     <a class='button' href='index.html'>Back</a>
     </div>
-    <div id='container'>
-    <canvas height='500' width='700'></canvas>
+    <div id='boardContainer'>
+        <div id='horizBar'>
+    <input type='text' class='input' id='encrypInput' placeholder='Enter encrypted password'>
+    <h2 class='button' id='generate'>Generate</h2>
+        </div>
+    <h1 id='gameBoard'></h1>
+    <textarea class='input'></textarea>
     </div>
 </body>
 </html>

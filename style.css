@@ -60,8 +60,22 @@ body {
     justify-content: center;
     text-shadow:  2px 2px darkslategrey, 2px 0 3px white;
     box-shadow: var(--boxShadow);
+    cursor: pointer;
 }
 .button:hover{
     background-color: #766666;
+}
+
+#gameButton {
+    padding: 20px;
+    border: solid darkslategrey 10px;
+}
+
+/* gameboard HTML */
+
+
+
+#canvas {
+    background-color: darkslateblue;
 }
 

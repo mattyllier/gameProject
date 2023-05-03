@@ -85,23 +85,29 @@ body {
 
 #horizBar {
     display: flex;
-    align-items: center;
-    
+    align-items: space-between;
+    justify-content: center;
+    width: 900px;
 }
 
 #generate {
     border: solid darkslategrey 9px;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin-left: 170px;
+    margin-right: 237px;
 }
 
 #reveal {
-    margin-right: 10px;
     cursor: default;
     background-color: #766666;
     border: solid darkslategrey 9px;
-    margin-right: 170px;
-    margin-left: -400px;
+}
+
+#thisRound {
+    cursor: default;
+    background-color: #766666;
+    border: solid darkslategrey 9px;
 }
 
 #gameBoard {
@@ -113,11 +119,20 @@ body {
     grid-template-columns: repeat(auto-fill, 50px);
 }
 
-.round {
+.roundTile {
     display: flex;
     justify-content: center;
     text-shadow: 1px 1px 2px indianred, 0 0 1em maroon, 0 0 0.2em lavender;
     font-size: 46px;
     border: solid red 5px;
     cursor: pointer;
+}
+
+.roundTile:hover {
+    background-color: darkslategrey;
+}
+
+#bottomHorizBar {
+    display: flex;
+    align-items: center;
 }

@@ -6,7 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src='scriptGameboard.js' defer></script>
     <link rel='stylesheet' href='style.css'></link>
+    <link rel='icon' href='favicon.ico'>
     <title>SecretPasswordGameboard</title>
+    <audio id='newLevel'><source src='level-complete-mobile-game-app-locran-1-00-06.mp3'></audio>
 </head>
 <body>
     <div id='header'>
@@ -16,9 +18,10 @@
         <div id='horizBar'>
             <h2 class='button' id='reveal'>Reveal Tile: 3</h2>
             <h2 class='button' id='generate'>Play</h2>
+            <h2 class='button' id='thisRound'>Round: 0</h2>
         </div>
     <h1 id='gameBoard'></h1>
-    <div id='horizBar'>
+    <div id='bottomHorizBar'>
     <input type='text' class='input' id='enterSolution' placeholder='Enter solution'>
     <h2 class='button' id='verify'>Verify</h2>
     </div>

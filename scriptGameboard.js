@@ -1,29 +1,41 @@
 const encrypInput = document.getElementById('encrypInput')
 const generate = document.getElementById('generate')
 const gameBoard = document.getElementById('gameBoard')
-const generateClicked = false
+const enterSolution = document.getElementById('enterSolution')
+const verify = document.getElementById('verify')
+let round = 0
 
 generate.addEventListener('click',e=>{
-    if(generateClicked===false){
-        const myArr = encrypInput.value.split('')
-        if(myArr.some(a=>a==='聡')) draw1()
-        else if(myArr.some(a=>a==='聩')) draw2()
-        else draw3()
-        generateClicked===true
-    }
+        round = 1
+        draw1()
+    
+})
+
+verify.addEventListener('click',e=>{
+    if(round===1 && enterSolution.value.toLowerCase()==='decipherthis' || enterSolution.value.toLowerCase()==='decipher this'){
+        console.log('working')
+        clear()
+        draw2()
+        round = 2
+    } else(console.log('not working'))
 })
 
 const draw1 = ()=>{
-    draw2()
+    let str1 = '聤eci聰h聥r t聨聩s'
+    str1.split('').forEach(a=>{
+        const round1 = document.createElement('div')
+        gameBoard.appendChild(round1)
+        round1.className = 'round'
+        round1.innerText = a
+        round = 1
+    })
+    
 }
 
-const draw2 = ()=>{
-    const round2 = document.createElement('h1')
-    gameBoard.appendChild(round2)
-    round2.className = 'round'
-    round2.innerText = '聤 e c i 聰 h 聥 r - t 聨 聩 s'
+const draw2 = () =>{
+
 }
 
-const draw3 = () =>{
-
+const clear = () =>{
+    gameBoard.removeChild('div')
 }

@@ -138,6 +138,7 @@ body {
     left: 340px;
     border: solid yellow 5px;
     background-color: darkslategrey;
+    background-image: url('closeUpImage.jpg');
 }
 
 #horizBar {
@@ -195,7 +196,15 @@ body {
     align-items: center;
 }
 
-#gameOver {
+#attempts {
+    color: lightgrey;
+    text-shadow: 4px 4px black;
+    font-size: 30px;
+    padding-right: 60px;
+    margin-left: -140px;
+}
+
+.gameOver {
     display: none;
     z-index: 1;
     position: fixed;
@@ -204,4 +213,9 @@ body {
     font-size: 20px;
     background-color: transparent;
     text-decoration: underline;
+}
+
+#completed {
+    text-decoration: none;
+    font-size: 40px;
 }

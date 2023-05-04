@@ -9,15 +9,23 @@ const audio = document.getElementById('newLevel')
 const info = document.getElementById('gameInfo')
 const modal = document.getElementById('gamePageModal')
 const closeModal = document.getElementById('close')
+const attemptCount = document.getElementById('attempts')
 const gameOver = document.getElementById('gameOver')
+const completed = document.getElementById('completed')
+
+let generated = false
 let round = 0
 let hints = 3
+let attempts = 5
 
 const defaults = ()=>{
     round = 0
     hints = 3
+    attempts = 5
+    generated = false
     thisRound.innerText = `Round: ${round}`
     reveal.innerText = `Reveal Tile: ${hints}`
+    attemptCount.innerText = `Attempts: ${attempts}`
 }
 
 const draw1 = ()=>{
@@ -40,14 +48,19 @@ const draw1 = ()=>{
             setTimeout(defaults,3000)
             }
         })
-        thisRound.innerText = 'Round: 1'
         round = 1
+        thisRound.innerText = `Round: ${round}`
     })
 }
 
 info.addEventListener('click',e=>modal.style.display = 'block')
 closeModal.addEventListener('click',e=>modal.style.display = 'none')
-generate.addEventListener('click',e=>draw1())
+generate.addEventListener('click',e=>{
+    if(!generated){
+        draw1()
+        generated = true
+    }
+})
 
 verify.addEventListener('click',e=>{
     switch(true){
@@ -65,10 +78,40 @@ verify.addEventListener('click',e=>{
             break;
         case round===4 && enterSolution.value.toLowerCase()==='':
             verified()
+            setTimeout(draw5,1500)
+            break;
+        case round===5 && enterSolution.value.toLowerCase()==='':
+            verified()
+            setTimeout(draw6,1500)
+            break;
+        case round===6 && enterSolution.value.toLowerCase()==='':
+            verified()
+            setTimeout(draw7,1500)
+            break;
+        case round===7 && enterSolution.value.toLowerCase()==='':
+            verified()
+            setTimeout(draw8,1500)
+            break;
+        case round===8 && enterSolution.value.toLowerCase()==='':
+            verified()
+            setTimeout(draw9,1500)
+            break;
+        case round===9 && enterSolution.value.toLowerCase()==='9':
+            displayCompleted()
+            clear()
+            defaults()
             break;
         default:
-            enterSolution.style.border = 'solid darkred 10px'
-            setTimeout(e=>enterSolution.style.border = 'none',1500)
+            if(attempts){
+                attempts--
+                attemptCount.innerText = `Attempts: ${attempts}`
+                enterSolution.style.border = 'solid darkred 10px'
+                setTimeout(e=>enterSolution.style.border = 'none',1500)
+            } else{
+                displayGameOver()
+                clear()
+                setTimeout(defaults,3000)
+            }
         }
 })
 
@@ -79,8 +122,8 @@ const draw2 = () =>{
         gameBoard.appendChild(round2)
         round2.className = 'roundTile'
         round2.innerText = a
-        thisRound.innerText = 'Round: 2'
         round = 2
+        thisRound.innerText = `Round: ${round}`
     })
 }
 
@@ -91,18 +134,39 @@ const draw3 = () =>{
         gameBoard.appendChild(round3)
         round3.className = 'roundTile'
         round3.innerText = a
-        thisRound.innerText = 'Round: 3'
         round = 3
+        thisRound.innerText = `Round: ${round}`
     })
 }
 
 const draw4 = () =>{
-    thisRound.innerText = 'Round: 4'
     round = 4
+    thisRound.innerText = `Round: ${round}`
 }
 
-const revealTile = ()=>{
-    
+const draw5 = ()=>{
+    round = 5
+    thisRound.innerText = `Round: ${round}`
+}
+
+const draw6 = ()=>{
+    round = 6
+    thisRound.innerText = `Round: ${round}`
+}
+
+const draw7 = ()=>{
+    round = 7
+    thisRound.innerText = `Round: ${round}`
+}
+
+const draw8 = ()=>{
+    round = 8
+    thisRound.innerText = `Round: ${round}`
+}
+
+const draw9 = ()=>{
+    round = 9
+    thisRound.innerText = `Round: ${round}`
 }
 
 const verified = () =>{
@@ -122,4 +186,9 @@ const clear = () =>{
 const displayGameOver = () =>{
     gameOver.style.display = 'block'
     setTimeout(e=>gameOver.style.display = 'none', 3000)
+}
+
+const displayCompleted = ()=>{
+    completed.style.display = 'block'
+    setTimeout(e=>completed.style.display = 'none', 5000)
 }

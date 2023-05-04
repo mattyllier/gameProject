@@ -8,17 +8,23 @@
     <script src='script.js' defer></script>
     <link rel='stylesheet' href='style.css'>
     <link rel='icon' href='favicon.ico'>
+    <audio id='newLevel'><source src='level-complete-mobile-game-app-locran-1-00-06.mp3'></audio>
 </head>
 <body>
     <h1 id='container'>
         <div>
-        <h2 id='header'>encryptor</h2>
-        <input type='text' class='input' id='mainInput' placeholder='Enter string'>
-        <h1 id='encrypt' class='button'>encrypt</h1>
-        <h1 id='decrypt' class='button'>decrypt</h1>
-        <a id='gameButton' class='button' href='gameboard.html'>Play Game!</a>
+            <p id='about' class='button'>?</p>
+            <h1 id='modal'>
+                <span id='insideModal'>
+                <button id='close' class='button'>Close</button>
+                </span>
+            </h1>
+            <h2 id='header'>Encryptor</h2>
+            <input type='text' class='input' id='mainInput' placeholder='Enter string'>
+            <h1 id='encrypt' class='button'>encrypt</h1>
+            <h1 id='decrypt' class='button'>decrypt</h1>
+            <a id='gameButton' class='button' href='gameboard.html'>Play Game!</a>
         </div>
-        
     </h1>
 </body>
 </html>

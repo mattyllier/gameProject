@@ -26,6 +26,36 @@ body {
   /*  background-image: url('carlos-felipe-ramirez-mesa-g3CsD5K-KZE-unsplash.jpg');*/
 }
 
+#about {
+    margin-bottom: -80px;
+    margin-left: -200px;
+    width: 40px;
+    border: solid yellow 5px;
+    color: yellow;
+    z-index: 1;
+}
+
+#modal {
+    display: none;
+    position: fixed;
+    z-index: 2;
+    height: 500px;
+    width: 800px;
+    background-color: #766666;
+    top: 115px;
+    left: 370px;
+    border: solid yellow 10px;
+    border-radius: 30px;
+}
+
+#insideModal {
+    display: flex;
+}
+
+#close {
+    margin: 10px;
+}
+
 #header {
     height: auto;
     width: auto;
@@ -132,7 +162,7 @@ body {
     background-color: darkslategrey;
 }
 
-#bottomHorizBar {
+.horizBar {
     display: flex;
     align-items: center;
 }

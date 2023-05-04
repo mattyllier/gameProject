@@ -6,30 +6,48 @@ const gameBoard = document.getElementById('gameBoard')
 const enterSolution = document.getElementById('enterSolution')
 const verify = document.getElementById('verify')
 const audio = document.getElementById('newLevel')
+const info = document.getElementById('gameInfo')
+const modal = document.getElementById('gamePageModal')
+const closeModal = document.getElementById('close')
+const gameOver = document.getElementById('gameOver')
 let round = 0
 let hints = 3
 
+const defaults = ()=>{
+    round = 0
+    hints = 3
+    thisRound.innerText = `Round: ${round}`
+    reveal.innerText = `Reveal Tile: ${hints}`
+}
+
 const draw1 = ()=>{
     let str1 = '聤eci聰h聥r t聨聩s'
+    let keystr1 = 'decipher this'
     str1.split('').forEach(a=>{
         let round1 = document.createElement('div')
         gameBoard.appendChild(round1)
         round1.className = 'roundTile'
         round1.innerText = a
+        round1.addEventListener('click',e=>{
+        if(hints){
+            e.target.innerText = keystr1[str1[e.target]]
+            hints--
+            reveal.innerText = `Reveal Tile: ${hints}`
+            }
+        else{
+            displayGameOver()
+            clear()
+            setTimeout(defaults,3000)
+            }
+        })
         thisRound.innerText = 'Round: 1'
         round = 1
     })
 }
 
+info.addEventListener('click',e=>modal.style.display = 'block')
+closeModal.addEventListener('click',e=>modal.style.display = 'none')
 generate.addEventListener('click',e=>draw1())
-
-document.querySelector('body').addEventListener('click',e=>{
-    if(e.target.className==='roundTile'){
-        if(e.target.charCodeAt(0)>30000) e.target.innerText = char.charCodeAt(0)-32768
-        hints--
-        reveal.innerText = `Reveal Tile: ${hints}`
-    }
-})
 
 verify.addEventListener('click',e=>{
     switch(true){
@@ -83,6 +101,10 @@ const draw4 = () =>{
     round = 4
 }
 
+const revealTile = ()=>{
+    
+}
+
 const verified = () =>{
     audio.play()
     enterSolution.style.border = 'solid 10px green'
@@ -95,4 +117,9 @@ const verified = () =>{
 const clear = () =>{
     gameBoard.innerHTML = ''
     enterSolution.value = ''
+}
+
+const displayGameOver = () =>{
+    gameOver.style.display = 'block'
+    setTimeout(e=>gameOver.style.display = 'none', 3000)
 }

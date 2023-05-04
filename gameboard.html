@@ -11,8 +11,14 @@
     <audio id='newLevel'><source src='level-complete-mobile-game-app-locran-1-00-06.mp3'></audio>
 </head>
 <body>
-    <div id='header'>
-    <a class='button' href='index.html'>Back</a>
+    <div class='horizBar'>
+        <p id='gameInfo' class='button'>?</p>
+        <h1 id='gamePageModal' class='button'>
+            <span id='insideModal'>
+            <button id='close' class='button'>Close</button>
+            </span>
+        </h1>
+        <a class='button' id='back' href='index.html'>Back</a>
     </div>
     <div id='boardContainer'>
         <div id='horizBar'>
@@ -20,11 +26,14 @@
             <h2 class='button' id='generate'>Play</h2>
             <h2 class='button' id='thisRound'>Round: 0</h2>
         </div>
-    <h1 id='gameBoard'></h1>
-    <div class='horizBar'>
-    <input type='text' class='input' id='enterSolution' placeholder='Enter solution'>
-    <h2 class='button' id='verify'>Verify</h2>
-    </div>
+        <div id='gameOver'>
+            <h1>聧聡聭聥䀠聯聶聥聲!</h1>
+        </div>
+        <h1 id='gameBoard'></h1>
+        <div class='horizBar'>
+            <input type='text' class='input' id='enterSolution' placeholder='Enter solution'>
+            <h2 class='button' id='verify'>Verify</h2>
+        </div>
     </div>
 </body>
 </html>

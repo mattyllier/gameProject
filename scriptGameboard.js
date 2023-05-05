@@ -31,18 +31,20 @@ const defaults = ()=>{
 const draw1 = ()=>{
     let str1 = '聤eci聰h聥r t聨聩s'
     let keystr1 = 'decipher this'
-    str1.split('').forEach(a=>{
+    str1.split('').forEach((a,i)=>{
         let round1 = document.createElement('div')
         gameBoard.appendChild(round1)
         round1.className = 'roundTile'
         round1.innerText = a
+        round1.value = i
         round1.addEventListener('click',e=>{
         if(hints){
-            e.target.innerText = keystr1[str1[e.target]]
-            hints--
-            reveal.innerText = `Reveal Tile: ${hints}`
+            if(a.charCodeAt(0)>30000){
+                e.target.innerText = keystr1[round1.value]
+                hints--
+                reveal.innerText = `Reveal Tile: ${hints}`
             }
-        else{
+        }else{
             displayGameOver()
             clear()
             setTimeout(defaults,3000)
@@ -102,7 +104,7 @@ verify.addEventListener('click',e=>{
             defaults()
             break;
         default:
-            if(attempts){
+            if(attempts && generated){
                 attempts--
                 attemptCount.innerText = `Attempts: ${attempts}`
                 enterSolution.style.border = 'solid darkred 10px'

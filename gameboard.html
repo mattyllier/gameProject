@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src='scriptGameboard.js' defer></script>
     <link rel='stylesheet' href='style.css'></link>
-    <link rel='icon' href='favicon.ico'>
     <title>SecretPasswordGameboard</title>
     <audio id='newLevel'><source src='level-complete-mobile-game-app-locran-1-00-06.mp3'></audio>
+    <audio id='completedAudio'><source src='correct-winner-sting-tomas-herudek-1-00-05.mp3'></audio>
 </head>
 <body>
     <div class='horizBar'>
@@ -35,12 +35,12 @@
             <h1>聧聡聭聥䀠聯聶聥聲!</h1>
         </div>
         <div id='completed' class='gameOver'>
-            <h1>You Win! / 聹聯聵䀠職聩聮䀡</h1>
+            <h1>You Win! 聹聯聵䀠職聩聮䀡</h1>
         </div>
         <h1 id='gameBoard'></h1>
         <div class='horizBar'>
             <h2 id='attempts'>Attempts: 5</h2>
-            <input type='text' class='input' id='enterSolution' placeholder='Enter solution'>
+            <input type='text' class='input' id='enterSolution' spellcheck='false' placeholder='Enter solution'>
             <h2 class='button' id='verify'>Verify</h2>
         </div>
     </div>

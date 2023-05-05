@@ -6,6 +6,7 @@ const gameBoard = document.getElementById('gameBoard')
 const enterSolution = document.getElementById('enterSolution')
 const verify = document.getElementById('verify')
 const audio = document.getElementById('newLevel')
+const completedAudio = document.getElementById('completedAudio')
 const info = document.getElementById('gameInfo')
 const modal = document.getElementById('gamePageModal')
 const closeModal = document.getElementById('close')
@@ -170,9 +171,9 @@ const displayGameOver = () =>{
 
 const displayCompleted = ()=>{
     completed.style.display = 'block'
+    completedAudio.play()
     setTimeout(e=>completed.style.display = 'none', 5000)
 }
-
 
 const roundStr = (str,key) =>{
     str.split('').forEach((a,i)=>{

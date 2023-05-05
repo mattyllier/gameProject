@@ -43,13 +43,18 @@ body {
     top: 140px;
     left: 380px;
     border: solid yellow 5px;
+    color: lightgrey;
+    text-shadow: 3px 3px black;
     background-color: darkslategrey;
+    background-image: url('closeUpImage.jpg')
 }
 
 #insideModal {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
 #close {
@@ -104,6 +109,12 @@ body {
     text-decoration: none;
 }
 
+#text {
+    font-size: 25px;
+    margin-top: 60px;
+    margin-left: -660px;
+}
+
 
 /* gameBoard */
 
@@ -137,6 +148,8 @@ body {
     top: 115px;
     left: 340px;
     border: solid yellow 5px;
+    color: lightgrey;
+    text-shadow: 3px 3px black;
     background-color: darkslategrey;
     background-image: url('closeUpImage.jpg');
 }
@@ -217,5 +230,5 @@ body {
 
 #completed {
     text-decoration: none;
-    font-size: 40px;
+    font-size: 33px;
 }

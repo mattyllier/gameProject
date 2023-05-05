@@ -5,10 +5,10 @@ const encry = document.getElementById('encrypt')
 const decry = document.getElementById('decrypt')
 const info = document.getElementById('about')
 const modal = document.getElementById('modal')
-const close = document.getElementById('close')
+const closeModal = document.getElementById('close')
 
 info.addEventListener('click',e=>modal.style.display = 'block')
-close.addEventListener('click',e=>modal.style.display = 'none')
+closeModal.addEventListener('click',e=>modal.style.display = 'none')
 
 encry.addEventListener('click',e=>{
     let myStr = input.value

@@ -1,3 +1,4 @@
+//used the DOM to save HTML elements on the gameboard page as variables
 const encrypInput = document.getElementById('encrypInput')
 const generate = document.getElementById('generate')
 const reveal = document.getElementById('reveal')
@@ -14,11 +15,13 @@ const attemptCount = document.getElementById('attempts')
 const gameOver = document.getElementById('gameOver')
 const completed = document.getElementById('completed')
 
+//declaring variables with a global scope that will be reassigned within more than one function
 let generated = false
 let round = 0
 let hints = 3
 let attempts = 5
 
+//defaults function is used to set the display and game logic upon page render and upon a game over
 const defaults = ()=>{
     round = 0
     hints = 3
@@ -29,6 +32,8 @@ const defaults = ()=>{
     attemptCount.innerText = `Attempts: ${attempts}`
 }
 
+//event listeners added to modal displaying the game instructions as well as the play button
+//the 'generated' logic only allows the play button to be clicked if a game is not already active
 info.addEventListener('click',e=>modal.style.display = 'block')
 closeModal.addEventListener('click',e=>modal.style.display = 'none')
 generate.addEventListener('click',e=>{
@@ -38,11 +43,16 @@ generate.addEventListener('click',e=>{
     }
 })
 
+//added event listener for verify button on click as well as shortcut for enter key
 verify.addEventListener('click',e=>verifyText())
 document.addEventListener('keydown',e=>{
     if(generated && e.key==='Enter') verifyText()
 })
 
+//this function is called in order for the user input to be verified
+//the switch statement contains the correct input that will allow the user to move on to the next round
+//if no case matches, meaning the user input is incorrect, attempts are subtracted, after five attempts, game over is triggered
+//when the user's input on the final round is verified as correct, a hidden text is revealed telling the user they won
 const verifyText = ()=>{
     switch(true){
         case round===1 && enterSolution.value.toLowerCase()==='decipherthis' || enterSolution.value.toLowerCase()==='decipher this':
@@ -96,6 +106,7 @@ const verifyText = ()=>{
         }
     }
 
+//functions called for each round, containing the clue that appears on the display and the key used for dynamically changing tiles
 const draw1 = ()=>{
     roundStr('聤eci聰h聥r t聨聩s','decipher this')
     round = 1
@@ -150,6 +161,7 @@ const draw9 = ()=>{
     thisRound.innerText = `Round: ${round}`
 }
 
+//the verified function is called when the user answers correctly, this function calls the clear function between rounds
 const verified = () =>{
     audio.play()
     enterSolution.style.border = 'solid 10px green'
@@ -159,11 +171,13 @@ const verified = () =>{
     },1500)
 }
 
+//the clear function resets the display and input bar as empty
 const clear = () =>{
     gameBoard.innerHTML = ''
     enterSolution.value = ''
 }
 
+//display game over and display completed functions reveal text by changing the default 'hidden' display to block
 const displayGameOver = () =>{
     gameOver.style.display = 'block'
     setTimeout(e=>gameOver.style.display = 'none', 3000)
@@ -174,6 +188,13 @@ const displayCompleted = ()=>{
     completedAudio.play()
     setTimeout(e=>completed.style.display = 'none', 5000)
 }
+
+//this is the most important function used for each round
+//this function takes the parameters set in the verified function, the string which will appear on the display is split 
+//each character is given its own clickable HTML element appended to the game board display
+//the text is the character value and the value is the index of the original string, used to correspond the matching character in the key
+//each character element contains an event listener, when clicked, if encrypted, the matching tile from the key is revealed
+//the user allowed to reveal three tiles, otherwise game over is triggered
 
 const roundStr = (str,key) =>{
     str.split('').forEach((a,i)=>{
@@ -197,30 +218,3 @@ const roundStr = (str,key) =>{
         })
     })
 }
-
-// const draw0 = ()=>{
-//     let str1 = '聤eci聰h聥r t聨聩s'
-//     let keystr1 = 'decipher this'
-//     str1.split('').forEach((a,i)=>{
-//         let round1 = document.createElement('div')
-//         gameBoard.appendChild(round1)
-//         round1.className = 'roundTile'
-//         round1.innerText = a
-//         round1.value = i
-//         round1.addEventListener('click',e=>{
-//         if(hints){
-//             if(a.charCodeAt(0)>30000){
-//                 e.target.innerText = keystr1[round1.value]
-//                 hints--
-//                 reveal.innerText = `Reveal Tile: ${hints}`
-//             }
-//         }else{
-//             displayGameOver()
-//             clear()
-//             setTimeout(defaults,3000)
-//             }
-//         })
-//         round = 1
-//         thisRound.innerText = `Round: ${round}`
-//     })
-// }

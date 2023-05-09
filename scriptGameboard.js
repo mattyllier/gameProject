@@ -63,31 +63,31 @@ const verifyText = ()=>{
             verified()
             setTimeout(draw3,1500)
             break;
-        case round===3 && enterSolution.value.toLowerCase()==='cryptic':
+        case round===3 && enterSolution.value.toLowerCase()==='cryptic as well as nebulous':
             verified()
             setTimeout(draw4,1500)
             break;
-        case round===4 && enterSolution.value.toLowerCase()==='this is round 4':
+        case round===4 && enterSolution.value.toLowerCase()==='you have reached round 4':
             verified()
             setTimeout(draw5,1500)
             break;
-        case round===5 && enterSolution.value.toLowerCase()==='5':
+        case round===5 && enterSolution.value.toLowerCase()==='the greatest ineffable clue':
             verified()
             setTimeout(draw6,1500)
             break;
-        case round===6 && enterSolution.value.toLowerCase()==='6':
+        case round===6 && enterSolution.value.toLowerCase()==='quixotic tendencies':
             verified()
             setTimeout(draw7,1500)
             break;
-        case round===7 && enterSolution.value.toLowerCase()==='7':
+        case round===7 && enterSolution.value.toLowerCase()==='the ephemeral solution':
             verified()
             setTimeout(draw8,1500)
             break;
-        case round===8 && enterSolution.value.toLowerCase()==='8':
+        case round===8 && enterSolution.value.toLowerCase()==='a sisyphean effort':
             verified()
             setTimeout(draw9,1500)
             break;
-        case round===9 && enterSolution.value.toLowerCase()==='completed':
+        case round===9 && enterSolution.value.toLowerCase()==='it appears no obfuscation can deter your skills':
             displayCompleted()
             clear()
             defaults()
@@ -107,6 +107,7 @@ const verifyText = ()=>{
     }
 
 //functions called for each round, containing the clue that appears on the display and the key used for dynamically changing tiles
+//inspiration for some of the more obscure phrases was drawn from chatGPT
 const draw1 = ()=>{
     roundStr('聤eci聰h聥r t聨聩s','decipher this')
     round = 1
@@ -120,43 +121,44 @@ const draw2 = () =>{
 }
 
 const draw3 = () =>{
-    roundStr('聣聲ypti聣','cryptic')
+    roundStr('聣聲ypti聣 聡s 職el聬 聡s n聥b聵lou聳','cryptic as well as nebulous')
     round = 3
     thisRound.innerText = `Round: ${round}`
 }
 
 const draw4 = () =>{
-    roundStr('this is 聲聯聵聮聤 4','this is round 4')
+    roundStr('聹聯u 聨聡v聥 聲聥ach聥d r聯un聤 䀴','you have reached round 4')
     round = 4
     thisRound.innerText = `Round: ${round}`
 }
 
 const draw5 = ()=>{
-    roundStr('5','5')
+    roundStr('聴h聥 gr聥聡聴es聴 i聮聥ff聡bl聥 聣聬ue','the greatest ineffable clue')
     round = 5
     thisRound.innerText = `Round: ${round}`
 }
 
 const draw6 = ()=>{
-    roundStr('6', '6')
+    roundStr('q聵聩xo聴i聣 聴聥nd聥n聣ie聳', 'quixotic tendencies')
     round = 6
     thisRound.innerText = `Round: ${round}`
 }
 
 const draw7 = ()=>{
-    roundStr('7', '7')
+    roundStr('t聨聥 聥ph聥m聥ral 聳o聬u聴io聮', 'the ephemeral solution')
     round = 7
     thisRound.innerText = `Round: ${round}`
 }
 
 const draw8 = ()=>{
-    roundStr('8','8')
+    roundStr('a 聳聩sy聰he聡n e聦聦聯rt','a sisyphean effort')
     round = 8
     thisRound.innerText = `Round: ${round}`
 }
 
 const draw9 = ()=>{
-    roundStr('9','completed')
+    roundStr('聩t 聡pp聥聡聲s 聮o o聢fu聳c聡聴io聮 c聡聮 聤et聥聲 聹聯u聲 s聫i聬聬s','it appears no obfuscation can deter your skills')
+    gameBoard.style.width = '1470px'
     round = 9
     thisRound.innerText = `Round: ${round}`
 }

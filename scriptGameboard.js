@@ -18,16 +18,17 @@ const completed = document.getElementById('completed')
 //declaring variables with a global scope that will be reassigned within more than one function
 let generated = false
 let round = 0
-let hints = 3
+let hints = 9
 let attempts = 5
 
 //defaults function is used to set the display and game logic upon page render and upon a game over
 const defaults = ()=>{
     round = 0
-    hints = 3
+    hints = 9
     attempts = 5
     generated = false
     gameBoard.style.width = '900px'
+    enterSolution.style.width = '393.2px'
     thisRound.innerText = `Round: ${round}`
     reveal.innerText = `Reveal Tile: ${hints}`
     attemptCount.innerText = `Attempts: ${attempts}`
@@ -114,18 +115,21 @@ const draw1 = ()=>{
     roundStr('聤eci聰h聥r t聨聩s','decipher this')
     round = 1
     thisRound.innerText = `Round: ${round}`
+    gameBoard.style.width = '800px'
 }
 
 const draw2 = () =>{
     roundStr('reverse=><=聲聥聶聥聲聳聥','reverse=><=esrever')
     round = 2
     thisRound.innerText = `Round: ${round}`
+    gameBoard.style.width = '570px'
 }
 
 const draw3 = () =>{
     roundStr('聣聲ypti聣 聡s 職el聬 聡s n聥b聵lou聳','cryptic as well as nebulous')
     round = 3
     thisRound.innerText = `Round: ${round}`
+    gameBoard.style.width = '900px'
 }
 
 const draw4 = () =>{
@@ -138,29 +142,34 @@ const draw5 = ()=>{
     roundStr('聴h聥 gr聥聡聴es聴 i聮聥ff聡bl聥 聣聬ue','the greatest ineffable clue')
     round = 5
     thisRound.innerText = `Round: ${round}`
+    gameBoard.style.width = '830px'
 }
 
 const draw6 = ()=>{
     roundStr('q聵聩xo聴i聣 聴聥nd聥n聣ie聳', 'quixotic tendencies')
     round = 6
     thisRound.innerText = `Round: ${round}`
+    gameBoard.style.width = '1130px'
 }
 
 const draw7 = ()=>{
     roundStr('t聨聥 聥ph聥m聥ral 聳o聬u聴io聮', 'the ephemeral solution')
     round = 7
     thisRound.innerText = `Round: ${round}`
+    gameBoard.style.width = '800px'
 }
 
 const draw8 = ()=>{
     roundStr('a 聳聩sy聰he聡n e聦聦聯rt','a sisyphean effort')
     round = 8
     thisRound.innerText = `Round: ${round}`
+    gameBoard.style.width = '750px'
 }
 
 const draw9 = ()=>{
     roundStr('聩t 聡pp聥聡聲s 聮o o聢fu聳c聡聴io聮 c聡聮 聤et聥聲 聹聯u聲 s聫i聬聬s','it appears no obfuscation can deter your skills')
     gameBoard.style.width = '1470px'
+    enterSolution.style.width = '800px'
     round = 9
     thisRound.innerText = `Round: ${round}`
 }

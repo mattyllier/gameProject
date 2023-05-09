@@ -28,7 +28,7 @@ const defaults = ()=>{
     attempts = 5
     generated = false
     gameBoard.style.width = '900px'
-    enterSolution.style.width = '393.2px'
+    enterSolution.style.width = '380px'
     thisRound.innerText = `Round: ${round}`
     reveal.innerText = `Reveal Tile: ${hints}`
     attemptCount.innerText = `Attempts: ${attempts}`

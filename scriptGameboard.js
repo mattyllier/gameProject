@@ -27,6 +27,7 @@ const defaults = ()=>{
     hints = 3
     attempts = 5
     generated = false
+    gameBoard.style.width = '900px'
     thisRound.innerText = `Round: ${round}`
     reveal.innerText = `Reveal Tile: ${hints}`
     attemptCount.innerText = `Attempts: ${attempts}`
@@ -54,40 +55,41 @@ document.addEventListener('keydown',e=>{
 //if no case matches, meaning the user input is incorrect, attempts are subtracted, after five attempts, game over is triggered
 //when the user's input on the final round is verified as correct, a hidden text is revealed telling the user they won
 const verifyText = ()=>{
+    let solution = enterSolution.value.toLowerCase()
     switch(true){
-        case round===1 && enterSolution.value.toLowerCase()==='decipherthis' || enterSolution.value.toLowerCase()==='decipher this':
+        case round===1 && solution==='decipher this' || solution==='decipher-this':
             verified()   
             setTimeout(draw2,1500)
             break;
-        case round===2 && enterSolution.value.toLowerCase()==='reverse=><=esrever':
+        case round===2 && solution==='reverse=><=esrever':
             verified()
             setTimeout(draw3,1500)
             break;
-        case round===3 && enterSolution.value.toLowerCase()==='cryptic as well as nebulous':
+        case round===3 && solution==='cryptic as well as nebulous' || solution==='cryptic-as-well-as-nebulous':
             verified()
             setTimeout(draw4,1500)
             break;
-        case round===4 && enterSolution.value.toLowerCase()==='you have reached round 4':
+        case round===4 && solution==='you have reached round 4' || solution==='you-have-reached-round-4':
             verified()
             setTimeout(draw5,1500)
             break;
-        case round===5 && enterSolution.value.toLowerCase()==='the greatest ineffable clue':
+        case round===5 && solution==='the greatest ineffable clue' || solution==='the-greatest-ineffable-clue':
             verified()
             setTimeout(draw6,1500)
             break;
-        case round===6 && enterSolution.value.toLowerCase()==='quixotic tendencies':
+        case round===6 && solution==='quixotic tendencies' || solution==='quixotic-tendencies':
             verified()
             setTimeout(draw7,1500)
             break;
-        case round===7 && enterSolution.value.toLowerCase()==='the ephemeral solution':
+        case round===7 && solution==='the ephemeral solution' || solution==='the-ephemeral-solution':
             verified()
             setTimeout(draw8,1500)
             break;
-        case round===8 && enterSolution.value.toLowerCase()==='a sisyphean effort':
+        case round===8 && solution==='a sisyphean effort' || solution==='a-sisyphean-effort':
             verified()
             setTimeout(draw9,1500)
             break;
-        case round===9 && enterSolution.value.toLowerCase()==='it appears no obfuscation can deter your skills':
+        case round===9 && solution==='it appears no obfuscation can deter your skills' || solution==='it-appears-no-obfuscation-can-deter-your-skills':
             displayCompleted()
             clear()
             defaults()
